@@ -9,12 +9,13 @@ import Empty from "./Empty";
 import Form from "./Form";
 // import Confirm from "./Confirm";
 // import Error from "./Error";
-// import Status from "./Status";
+import Status from "./Status";
 
 export default function Appointment(props) {
   const EMPTY = "EMPTY";
   const SHOW = "SHOW";
   const CREATE = "CREATE";
+  const SAVING = "SAVING";
 
   const { mode, transition, back } = useVisualMode(
     props.interview ? SHOW : EMPTY
@@ -25,9 +26,10 @@ export default function Appointment(props) {
       student: name,
       interviewer
     };
+    transition(SAVING);
 
     props.bookInterview(props.id, interview)
-     transition(SHOW)
+     .then(() => {transition(SHOW)})
   }  
 
 
@@ -39,6 +41,11 @@ export default function Appointment(props) {
         <Show
           student={props.interview.student}
           interviewer={props.interview.interviewer}
+        />
+      )}
+      {mode === SAVING && (
+        <Status
+          message="Saving"
         />
       )}
       {mode === CREATE && (
