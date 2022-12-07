@@ -8,49 +8,23 @@ export default function useApplicationData() {
     days: [],
     appointments: {},
     interviewers: {}
-    //spots: 5
   });
 
   const setDay = day => setState({...state, day});
 
+  const getSpots = function(state, appointments){
 
-  /*--Spots planning--
+    const currentDay = state.days.find(day => day.name === state.day);
 
-Spots is in day object
+    const emptyAppointmentsForDay = currentDay.appointments.filter((id) => !appointments[id].interview);
 
-spots = appointments where interview=null
+    const emptySpots = emptyAppointmentsForDay.length;
 
-should update spots as .then in save and delete
+    const updatedDay = {...currentDay, spots: emptySpots};
 
-appointment id is known when an interview is confirmed or cancelled by the server
+    const updatedDays = state.days.map(day => day.name === state.day ? updatedDay : day)
 
-*/
-
-// const filteredDay = state.days.filter(days => days.name === day);
-
-// if (filteredDay.length === 0) {
-//   return filteredDay;
-// }
-
-// const filteredAppointments = filteredDay[0].appointments;
-
-// const daysAppointments = filteredAppointments.map(appointment => {
-//   return state.appointments[appointment];
-// });
-
-// return daysAppointments;
-const getSpots = function(state, appointments){
-  const currentDay = state.days.find(day => day.name === state.day);
-
-  const emptyAppointmentsForDay = currentDay.appointments.filter((id) => !appointments[id].interview);
-
-  const emptySpots = emptyAppointmentsForDay.length;
-
-  const updatedDay = {...currentDay, spots: emptySpots};
-
-  const updatedDays = state.days.map(day => day.name === state.day ? updatedDay : day)
-
-  return updatedDays
+    return updatedDays
 
 }
 
