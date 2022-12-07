@@ -12,7 +12,7 @@ export default function useApplicationData() {
 
   const setDay = day => setState({...state, day});
 
-  const getSpots = function(state, appointments){
+  const updateSpots = function(state, appointments){
 
     const currentDay = state.days.find(day => day.name === state.day);
 
@@ -51,7 +51,7 @@ export default function useApplicationData() {
       [id]: appointment
     };
 
-    const days = getSpots(state, appointments)
+    const days = updateSpots(state, appointments)
 
     return axios.put(`/api/appointments/${id}`, {interview})
       .then(() => {
@@ -71,7 +71,7 @@ export default function useApplicationData() {
       [id]: appointment
     };
 
-    const days = getSpots(state, appointments)
+    const days = updateSpots(state, appointments)
 
     return axios.delete(`/api/appointments/${id}`)
       .then(() => {
