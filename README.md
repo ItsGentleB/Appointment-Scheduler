@@ -8,9 +8,9 @@ Interview Scheduler is an SPA built using React and was meant as an introduction
 -Introduce Axios to make HTTP requests as an alternative to JQuery.
 
 
-!["Home Page"]()
-!["Create"]()
-!["Delete"]()
+!["Home Page"](https://github.com/ItsGentleBen/scheduler/blob/master/public/images/Display.png)
+!["Create"](https://github.com/ItsGentleBen/scheduler/blob/master/public/images/Create.png)
+!["Delete"](https://github.com/ItsGentleBen/scheduler/blob/master/public/images/Delete.png)
 
 ## Setup
 
