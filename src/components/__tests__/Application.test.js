@@ -164,7 +164,9 @@ describe("Appointment", () => {
     fireEvent.click(getByAltText(appointment, "Delete"));
 
     fireEvent.click(getByText(appointment, "Confirm"));
+
     await waitForElement(() => getByText(appointment, "Could not cancel appointment."));
+    
     expect(getByText(appointment, 'Could not cancel appointment.')).toBeInTheDocument();
 
     const day = getAllByTestId(container, "day").find(day =>
