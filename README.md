@@ -3,9 +3,9 @@
 Interview Scheduler is an SPA built using React and was meant as an introduction to the library. It allows the user to book, edit, and cancel an interview appointment on any weekday between 12pm and 5pm.
 
 # Learning Goals
--Introduce the basics of React and use it to build a single page application
--Learn the testing frameworks Storybook, Jest, and Cypress and use them for unit, integration, and E2E testing.
--Introduce Axios to make HTTP requests as an alternative to JQuery.
+*Introduce the basics of React and use it to build a single page application
+*Learn the testing frameworks Storybook, Jest, and Cypress and use them for unit, integration, and E2E testing.
+*Introduce Axios to make HTTP requests as an alternative to JQuery.
 
 
 !["Home Page"](https://github.com/ItsGentleBen/scheduler/blob/master/public/images/Display.png)
