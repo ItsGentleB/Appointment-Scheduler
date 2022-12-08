@@ -10,8 +10,10 @@ export default function useApplicationData() {
     interviewers: {}
   });
 
+  //Sets the day
   const setDay = day => setState({...state, day});
 
+  //Gets and sets the number of interview spots remaining for the day
   const updateSpots = function(state, appointments){
 
     const currentDay = state.days.find(day => day.name === state.day);
@@ -27,7 +29,7 @@ export default function useApplicationData() {
     return updatedDays
 
 }
-
+//Makes a request to the server for the day, appointment, and interview data
   useEffect(() => {
     Promise.all([
       axios.get('/api/days'),
@@ -38,7 +40,7 @@ export default function useApplicationData() {
     });
   }, []);
 
-
+//Updates database when user books interview
   const bookInterview = function(id, interview) {
       
     const appointment = {
@@ -58,7 +60,7 @@ export default function useApplicationData() {
         setState(prev => ({...prev, appointments, days}))
       })
   };
-
+//Updates database when user cancels interview
   const deleteInterview = function(id) {
       
     const appointment = {

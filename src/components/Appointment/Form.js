@@ -5,21 +5,24 @@ import InterviewerList from "components/InterviewerList";
 
 
 export default function Form(props) {
+
+//To set states
   const [student, setStudent] = useState(props.student || "");
   const [interviewer, setInterviewer] = useState(props.interviewer || null);
   const [error, setError] = useState("");
 
-
+//Resets the form
   const reset = () => {
     setStudent("");
     setInterviewer(null);
   }
-
+//Cancels the action
   const cancel = () => {
     reset();
     props.onCancel();
   }
 
+//Checks that the user has entered a name and selected an interviewer
   function validate() {
     if (student === "") {
       setError("Student name cannot be blank");

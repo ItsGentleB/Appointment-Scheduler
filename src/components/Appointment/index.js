@@ -23,11 +23,12 @@ export default function Appointment(props) {
   const ERROR_DELETE = "ERROR_DELETE";
 
 
-
+//Destructures useVisual mode to access contents and displays an interview if there is one, otherwise it displays an empty slot
   const { mode, transition, back } = useVisualMode(
     props.interview ? SHOW : EMPTY
   );
 
+//Saves the interview and displays the saved interview
   const save = function(name, interviewer) {
     const interview = {
       student: name,
@@ -44,6 +45,7 @@ export default function Appointment(props) {
       });
   }  
 
+//Deletes an appointment and shows an empty appointment slot
   const deleteAppointment = function() {
     transition(DELETING, true);
 
@@ -55,6 +57,7 @@ export default function Appointment(props) {
       });
   }
 
+//Used to display a confirmation message before deleting
   const confirmDelete = function() {
     transition(CONFIRM);
   }
