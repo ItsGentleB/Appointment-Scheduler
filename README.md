@@ -1,6 +1,6 @@
-# Interview Scheduler
+# Appointment Scheduler
 
-Interview Scheduler is an SPA built using React and was meant as an introduction to the library. It allows the user to book, edit, and cancel an interview appointment on any weekday between 12pm and 5pm.
+Appointment Scheduler is an SPA built using React and was meant as an introduction to the library. It allows the user to book, edit, and cancel an interview appointment on any weekday between 12pm and 5pm.
 
 # Learning Goals
 * Introduce the basics of React and use it to build a single page application
